@@ -7,6 +7,8 @@ import { useMemo } from 'react'
 //this library allows us to create unique string ids
 import { v4 as uuidV4 } from 'uuid'
 import { NoteList } from './components/NoteList'
+import { NoteLayout } from './components/NoteLayout'
+import { ShowNote } from './components/ShowNote'
 
 export interface Note extends NoteData {
   id: string
@@ -62,11 +64,10 @@ function App() {
       <Route path="/" element={<NoteList notes={notesWithTags} availableTags={tags} />}/>
       <Route path="/new" element={<NewNote onSubmit={onCreateNote} onAddTag={addTag} availableTags={tags}/>}/>
       
-      {/* FIX BROKEN NESTED ROUTE */}
-      {/* <Route path="/:id">
-        <Route index element={<h1>Show</h1>}/>
-        <Route path="/edit" element={<h1>Edit</h1>}/>
-      </Route> */}
+      <Route path="/:id" element={<NoteLayout notes={notesWithTags} />}>
+        <Route index element={<ShowNote />}/>
+        <Route path="edit" element={<h1>Edit</h1>}/>
+      </Route>
 
       <Route path="*" element={<Navigate to="/"/>}/>
     </Routes>
