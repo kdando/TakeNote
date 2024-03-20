@@ -9,10 +9,12 @@ import { v4 as uuidV4 } from 'uuid'
 import { NoteList } from './components/NoteList'
 import { NoteLayout } from './components/NoteLayout'
 import { ShowNote } from './components/ShowNote'
-import { EditNote } from './components/EditNote.tsx'
+import { EditNote } from './components/EditNote'
 
-export interface Note extends NoteData {
+
+export type Tag = {
   id: string
+  label: string
 }
 
 export type NoteData = {
@@ -21,12 +23,7 @@ export type NoteData = {
   tags: Tag[]
 }
 
-export type Tag = {
-  id: string
-  label: string
-}
-
-export interface RawNote extends RawNoteData {
+export interface Note extends NoteData {
   id: string
 }
 
@@ -36,6 +33,9 @@ export type RawNoteData = {
   tagIds: string[]
 }
 
+export interface RawNote extends RawNoteData {
+  id: string
+}
 
 function App() {
 
@@ -54,17 +54,20 @@ function App() {
     })
   }
 
-  function onUpdateNote (id: string, {tags, ...data}: NoteData) {
+
+  function onUpdateNote(id: string, { tags, ...data }: NoteData) {
     setNotes(prevNotes => {
       return prevNotes.map(note => {
         if (note.id === id) {
-          return {...note, ...data, tagIds: tags.map(tag => tag.id) }
+          return { ...note, ...data, tagIds: tags.map(tag => tag.id) }
         } else {
-          return note;
+          return note
         }
       })
     })
   }
+
+
 
   function addTag(tag: Tag) {
     setTags(prev => [...prev, tag]);
