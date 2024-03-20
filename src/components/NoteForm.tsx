@@ -5,7 +5,7 @@ import CreatableReactSelect from 'react-select/creatable'
 import { NoteData, Tag } from "../App";
 
 import { v4 as uuidV4 } from 'uuid'
-import { Prev } from "react-bootstrap/esm/PageItem";
+
 
 type NoteFormProps = {
     onSubmit: (data: NoteData) => void
