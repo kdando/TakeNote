@@ -33,7 +33,7 @@ export function NoteForm ({ onSubmit, onAddTag, availableTags }: NoteFormProps) 
         })
 
         navigate("..")
-        
+
     }
 
     return (<Form onSubmit={handleSubmit}>
@@ -51,7 +51,6 @@ export function NoteForm ({ onSubmit, onAddTag, availableTags }: NoteFormProps) 
                 <Form.Group controlId="tags">
                     <Form.Label>Tags</Form.Label>
                     <CreatableReactSelect  
-                        
                         onCreateOption={label => {
                             const newTag = { id: uuidV4(), label }
                             onAddTag(newTag);
@@ -70,8 +69,7 @@ export function NoteForm ({ onSubmit, onAddTag, availableTags }: NoteFormProps) 
                         return { label: tag.label, id: tag.value }
                          }))}
 
-                    isMulti={true}/>
-                    <Form.Control required />
+                        isMulti={true}/>
                 </Form.Group>
                 </Col>
 
