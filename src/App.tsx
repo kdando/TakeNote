@@ -6,6 +6,7 @@ import { useLocalStorage } from './hooks/useLocalStorage'
 import { useMemo } from 'react'
 //this library allows us to create unique string ids
 import { v4 as uuidV4 } from 'uuid'
+import { NoteList } from './components/NoteList'
 
 export interface Note extends NoteData {
   id: string
@@ -58,7 +59,7 @@ function App() {
     <Container className='my-4'>
     
     <Routes>
-      <Route path="/" element={<h1>Home</h1>}/>
+      <Route path="/" element={<NoteList />}/>
       <Route path="/new" element={<NewNote onSubmit={onCreateNote} onAddTag={addTag} availableTags={tags}/>}/>
       
       {/* FIX BROKEN NESTED ROUTE */}
