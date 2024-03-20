@@ -21,6 +21,7 @@ export function useLocalStorage<T> (key: string, initialValue: T | (() => T)) {
         localStorage.setItem(key, JSON.stringify(value))
     }, [value, key])
 
+    //return an array, the type of the first item in array will be our type T, the second value will be of whatever type setValue is. "as" is a way of casting the data types
     return [value, setValue] as [T, typeof setValue]
 
 }
