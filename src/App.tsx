@@ -40,6 +40,8 @@ export type RawNoteData = {
 ///////////////////////
 
 
+
+
 function App() {
 
   //NOTES AND TAGS ARE SAVED IN LOCAL STORAGE

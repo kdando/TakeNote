@@ -4,7 +4,8 @@ import { Link } from "react-router-dom";
 import ReactSelect from "react-select";
 import { Tag } from "../App";
 
-import { NoteCard } from "./NoteCard";
+//importing components and types
+import { NoteCard, SimplifiedNote } from "./NoteCard";
 import { EditTagsModal } from "./EditTagsModal";
 
 //CUSTOM TYPES///////////
@@ -14,20 +15,6 @@ type NoteListProps = {
     onDeleteTag: (id: string) => void
     onUpdateTag: (id: string, label: string) => void
 }
-
-type SimplifiedNote = {
-    tags: Tag[]
-    title: string
-    id: string
-}
-
-// type EditTagsModalProps = {
-//     show: boolean
-//     availableTags: Tag[]
-//     handleClose: () => void
-//     onDeleteTag: (id: string) => void
-//     onUpdateTag: (id: string, label: string) => void
-// }
 ///////////////////////
 
 export function NoteList ({ availableTags, notes, onUpdateTag, onDeleteTag }: NoteListProps) {

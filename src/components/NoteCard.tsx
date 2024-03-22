@@ -2,7 +2,7 @@ import { Badge, Card, Stack } from "react-bootstrap";
 import { Tag } from "../App";
 import { Link } from "react-router-dom";
 
-import styles from '../NoteList.module.scss'
+import styles from '../NoteCard.module.scss'
 
 //CUSTOM TYPES////////////////
 export type SimplifiedNote = {

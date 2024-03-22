@@ -3,12 +3,17 @@ import { useNote } from "./NoteLayout";
 import { Link, useNavigate } from "react-router-dom";
 import ReactMarkdown from "react-markdown"
 
+//CUSTOM TYPES//////////////
 type ShowNoteProps = {
     onDelete: (id: string) => void
 }
+////////////////////////////
 
 export function ShowNote ({ onDelete }: ShowNoteProps) {
+
+    //invoke useNote function to access context and identify current note to show
     const note = useNote();
+    //invoke useNav to instantiate navigator (cannot just pass path to useNavigate() it expects 0 args)
     const navigate = useNavigate();
 
     return (
@@ -39,7 +44,7 @@ export function ShowNote ({ onDelete }: ShowNoteProps) {
                     </Link>
                 </Stack>
             </Col>
-            
+
 
         </Row>
 
