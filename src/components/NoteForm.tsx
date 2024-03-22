@@ -26,7 +26,7 @@ export function NoteForm({
     const titleRef = useRef<HTMLInputElement>(null)
     const markdownRef = useRef<HTMLTextAreaElement>(null)
 
-    const [selectedTags, setSelectedTags] = useState<Tag[]>([])
+    const [selectedTags, setSelectedTags] = useState<Tag[]>(tags)
 
     const navigate = useNavigate()
 
@@ -37,7 +37,7 @@ export function NoteForm({
         onSubmit({
             title: titleRef.current!.value,
             markdown: markdownRef.current!.value,
-            tags: [],
+            tags: selectedTags,
         })
 
         navigate("..")
