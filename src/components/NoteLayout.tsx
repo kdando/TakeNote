@@ -22,7 +22,7 @@ export function NoteLayout ({ notes }: NoteLayoutProps) {
     const note = notes.find(item => item.id === id);
 
     // if the id doesnt exist redirect to homepage
-    if (!note) { return <Navigate to="/" replace /> }
+    if (note === null) { return <Navigate to="/" replace /> }
 
     //if it does, render the relevant nested route
     return <Outlet context={note} />
