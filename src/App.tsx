@@ -106,7 +106,7 @@ function App() {
   return (
     <main>
 
-    <Container className='my-4'>
+    <Container className='my-4' style={{ borderStyle: "dashed", borderWidth: "5px", padding: "20px" }}>
     
     <Routes>
       <Route path="/" element={<NoteList notes={notesWithTags} availableTags={tags} onUpdateTag={updateTag} onDeleteTag={deleteTag}/>} />

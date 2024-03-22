@@ -1,5 +1,11 @@
-/* REMOVE ROUNDED CORNERS FROM EVERYTHING */
+/* UNIVERSAL STYLING */
 
+/* REMOVE ROUNDED CORNERS FROM EVERYTHING */
 * {
     border-radius: 0 !important;
   }
+
+/* SET BACKGROUND COLOUR FOR PAGE */
+body {
+    background-color: #FFC107 !important
+}  
