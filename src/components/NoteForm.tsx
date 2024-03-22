@@ -1,5 +1,5 @@
 import { FormEvent, useRef, useState } from "react";
-import { Button, Col, Form, Row, Stack } from "react-bootstrap";
+import { Accordion, Button, Col, Form, Row, Stack } from "react-bootstrap";
 import { Link, useNavigate } from "react-router-dom";
 import CreatableReactSelect from 'react-select/creatable'
 import { NoteData, Tag } from "../App";
@@ -33,15 +33,12 @@ export function NoteForm({
 
     const handleSubmit = (event: FormEvent) => {
         event.preventDefault();
-    
         onSubmit({
             title: titleRef.current!.value,
             markdown: markdownRef.current!.value,
             tags: selectedTags,
         })
-
         navigate("..")
-
     }
 
     return (<Form onSubmit={handleSubmit}>
@@ -81,6 +78,21 @@ export function NoteForm({
                 </Form.Group>
                 </Col>
 
+            </Row>
+
+            <Row>
+                <Accordion>
+                    <Accordion.Header>This app supports markdown, expand to learn more.</Accordion.Header>
+                    <Accordion.Body>
+                    <p>Markdown is a powerful alternative to HTML for crafting written content that can be easily shared online, kept in a notes app, or exported to other formats. Some basic syntax:</p>
+                    <ul>
+                        <li>Prefix text with # for a H1 Heading, or ##, ### etc for smaller Headings.</li>
+                        <li>Surround text with *asterisks* for italic, or **double asterisks** for bold.</li>
+                        <li>Number text with 1., 2., etc for an ordered list, or - for an unordered one.</li>
+                    </ul>
+                    <Link to="https://www.markdownguide.org/cheat-sheet/" target="_blank">For further reference click this link (opens in new window).</Link>
+                    </Accordion.Body>
+                </Accordion>
             </Row>
 
             <Form.Group controlId="markdown">
