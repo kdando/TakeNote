@@ -104,6 +104,8 @@ function App() {
   ///////////////////////
 
   return (
+    <main>
+
     <Container className='my-4'>
     
     <Routes>
@@ -119,6 +121,8 @@ function App() {
     </Routes>
 
     </Container>
+
+    </main>
   
   )
 }

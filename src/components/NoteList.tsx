@@ -47,7 +47,7 @@ export function NoteList ({ availableTags, notes, onUpdateTag, onDeleteTag }: No
             <Col xs="auto">
                 <Stack gap={2} direction="horizontal">
                     <Link to="/new">
-                        <Button variant="primary">New Note</Button>
+                        <Button variant="primary" >New Note</Button>
                     </Link>
                     <Button variant="outline-sec" onClick={() => setEditTagsModalIsOpen(true)}>Edit Tags</Button>
                 </Stack>
@@ -81,7 +81,7 @@ export function NoteList ({ availableTags, notes, onUpdateTag, onDeleteTag }: No
                         return { label: tag.label, id: tag.value }
                          }))}
 
-                    isMulti={true}/>
+                    isMulti={true} />
                 </Form.Group>
                 </Col>
             </Row>

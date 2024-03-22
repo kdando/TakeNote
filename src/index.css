@@ -1,0 +1,5 @@
+/* REMOVE ROUNDED CORNERS FROM EVERYTHING */
+
+* {
+    border-radius: 0 !important;
+  }
