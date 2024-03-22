@@ -4,9 +4,10 @@ import { Link, useNavigate } from "react-router-dom";
 import CreatableReactSelect from 'react-select/creatable'
 import { NoteData, Tag } from "../App";
 
+//this library lets us create unique string-based ids
 import { v4 as uuidV4 } from 'uuid'
 
-
+//CUSTOM TYPES///////////////
 type NoteFormProps = {
     onSubmit: (data: NoteData) => void
     onAddTag: (tag: Tag) => void
