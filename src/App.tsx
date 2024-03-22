@@ -11,6 +11,8 @@ import { NoteLayout } from './components/NoteLayout'
 import { ShowNote } from './components/ShowNote'
 import { EditNote } from './components/EditNote'
 
+
+//CUSTOM TYPES///////////
 export interface Note extends NoteData {
   id: string
 }
@@ -35,19 +37,24 @@ export type RawNoteData = {
   markdown: string
   tagIds: string[]
 }
+///////////////////////
 
 
 function App() {
 
+  //NOTES AND TAGS ARE SAVED IN LOCAL STORAGE
   const [notes, setNotes ] = useLocalStorage<RawNote[]>("NOTES", [])
   const [tags, setTags ] = useLocalStorage<Tag[]>("TAGS", [])
+  ///////////////////////
 
   const notesWithTags = useMemo(() => {
     return notes.map(note => {
       return { ...note, tags: tags.filter(tag => note.tagIds.includes(tag.id))}
     })
   }, [notes, tags])
+  ///////////////////////
 
+  //CRUD FUNCTIONS FOR NOTES
   function onCreateNote({tags, ...data}: NoteData) {
     setNotes(prevNotes => {
       return [...prevNotes, {...data, id: uuidV4(), tagIds: tags.map(tag => tag.id)}]
@@ -71,8 +78,9 @@ function App() {
       return prevNotes.filter(note => note.id !== id) 
     })
   }
+  ///////////////////////
   
-
+  //CRUD FUNCTIONS FOR TAGS
   function addTag(tag: Tag) {
     setTags(prev => [...prev, tag]);
   }
@@ -94,6 +102,7 @@ function App() {
       return prevTags.filter(tag => tag.id !== id) 
     })
   }
+  ///////////////////////
 
   return (
     <Container className='my-4'>
