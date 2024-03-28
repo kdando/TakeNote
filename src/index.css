@@ -1,5 +1,18 @@
 /* UNIVERSAL STYLING */
 
+/* FONT IMPORT AND SETTING */
+
+@font-face {
+  font-family: 'Typographica';
+  src: url('/src/assets/fonts/Typographica-Blp5.ttf'), format('truetype');
+}
+
+h1 {
+  font-family: 'Typographica', sans-serif;
+}
+
+
+
 /* REMOVE ROUNDED CORNERS FROM EVERYTHING */
 * {
     border-radius: 0 !important;
