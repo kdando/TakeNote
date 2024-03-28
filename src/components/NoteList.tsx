@@ -45,11 +45,12 @@ export function NoteList ({ availableTags, notes, onUpdateTag, onDeleteTag }: No
         <Row className="align-items-center mb-4">
             <Col><h1 >TakeNote</h1></Col>
             <Col xs="auto">
-                <Stack gap={2} direction="horizontal">
+                <Stack gap={3} direction="horizontal">
                     <Link to="/new">
                         <Button variant="primary"  style={{ backgroundColor: '#C107FF', borderColor: '#C107FF'}}>New Note</Button>
                     </Link>
                     <Button variant="outline-sec" onClick={() => setEditTagsModalIsOpen(true)}>Edit Tags</Button>
+                    <Button variant='outline-sec'>About</Button>
                 </Stack>
             </Col>
         </Row>

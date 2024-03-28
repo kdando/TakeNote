@@ -81,9 +81,9 @@ export function NoteForm({
             </Row>
 
             <Row>
-                <Accordion>
-                    <Accordion.Header>This app supports markdown, expand to learn more.</Accordion.Header>
-                    <Accordion.Body>
+                <Accordion >
+                    <Accordion.Header >This app supports markdown, expand to learn more.</Accordion.Header>
+                    <Accordion.Body className="bg-warning">
                     <p>Markdown is a powerful alternative to HTML for crafting written content that can be easily shared online, kept in a notes app, or exported to other formats. Some basic syntax:</p>
                     <ul>
                         <li>Prefix text with # for a H1 Heading, or ##, ### etc for smaller Headings.</li>

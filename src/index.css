@@ -7,10 +7,18 @@
   src: url('/src/assets/fonts/Typographica-Blp5.ttf'), format('truetype');
 }
 
+@font-face {
+  font-family: 'Archivo';
+  src: url('/src/assets/fonts/Archivo-VariableFont_wdth\,wght.ttf'), format('truetype');
+}
+
+*:not(h1) {
+  font-family: 'Archivo', Courier, sans-serif;
+}
+
 h1 {
   font-family: 'Typographica', sans-serif;
 }
-
 
 
 /* REMOVE ROUNDED CORNERS FROM EVERYTHING */
