@@ -13,7 +13,7 @@ type EditTagsModalProps = {
 
 export function EditTagsModal ({ availableTags, show, handleClose, onDeleteTag, onUpdateTag }: EditTagsModalProps) {
     return (
-        <Modal show={show} onHide={handleClose}>
+        <Modal show={show} onHide={handleClose} style={{ borderRadius: 0 }}>
             <Modal.Header closeButton>
                 <Modal.Title>Edit Tags</Modal.Title>
             </Modal.Header>

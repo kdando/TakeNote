@@ -43,11 +43,11 @@ export function NoteList ({ availableTags, notes, onUpdateTag, onDeleteTag }: No
         <>
         {/* TOP BAR - APP TITLE ON LEFT, 2 BUTTONS ON RIGHT */}
         <Row className="align-items-center mb-4">
-            <Col><h1>TakeNote</h1></Col>
+            <Col><h1 >TakeNote</h1></Col>
             <Col xs="auto">
                 <Stack gap={2} direction="horizontal">
                     <Link to="/new">
-                        <Button variant="primary">New Note</Button>
+                        <Button variant="primary"  style={{ backgroundColor: '#C107FF', borderColor: '#C107FF'}}>New Note</Button>
                     </Link>
                     <Button variant="outline-sec" onClick={() => setEditTagsModalIsOpen(true)}>Edit Tags</Button>
                 </Stack>
@@ -81,7 +81,7 @@ export function NoteList ({ availableTags, notes, onUpdateTag, onDeleteTag }: No
                         return { label: tag.label, id: tag.value }
                          }))}
 
-                    isMulti={true}/>
+                    isMulti={true} />
                 </Form.Group>
                 </Col>
             </Row>
