@@ -33,7 +33,7 @@ export function ShowNote ({ onDelete }: ShowNoteProps) {
             <Col xs="auto">
                 <Stack gap={2} direction="horizontal">
                     <Link to={`/${note.id}/edit`}>
-                        <Button variant="primary" >Edit</Button>
+                        <Button variant="primary">Edit</Button>
                     </Link>
                     <Button onClick={() => {
                         onDelete(note.id);
