@@ -4,9 +4,10 @@ import { Link } from "react-router-dom";
 import ReactSelect from "react-select";
 import { Tag } from "../App";
 
-//importing components and types
+//importing components
 import { NoteCard, SimplifiedNote } from "./NoteCard";
 import { EditTagsModal } from "./EditTagsModal";
+import { AboutModal } from "./AboutModal";
 
 //CUSTOM TYPES///////////
 type NoteListProps = {
@@ -19,10 +20,11 @@ type NoteListProps = {
 
 export function NoteList ({ availableTags, notes, onUpdateTag, onDeleteTag }: NoteListProps) {
 
-    //STATE TO TRACK FILTERING BY TAG, NOTE TITLE, AND EDIT TAG MODAL OPEN/CLOSE
+    //STATE TO TRACK FILTERING BY TAG, NOTE TITLE, EDIT TAG MODAL OPEN/CLOSE, ABOUT MODAL OPEN/CLOSE
     const [selectedTags, setSelectedTags] = useState<Tag[]>([])
     const [title, setTitle] = useState("")
     const [editTagsModalIsOpen, setEditTagsModalIsOpen] = useState(false)
+    const [aboutModalIsOpen, setAboutModalIsOpen] = useState(false)
     ///////////////////////
 
     const filteredNotes = useMemo(() => {
@@ -47,10 +49,10 @@ export function NoteList ({ availableTags, notes, onUpdateTag, onDeleteTag }: No
             <Col xs="auto">
                 <Stack gap={3} direction="horizontal">
                     <Link to="/new">
-                        <Button variant="primary"  style={{ backgroundColor: '#C107FF', borderColor: '#C107FF'}}>New Note</Button>
+                        <Button variant="primary">New Note</Button>
                     </Link>
                     <Button variant="outline-sec" onClick={() => setEditTagsModalIsOpen(true)}>Edit Tags</Button>
-                    <Button variant='outline-sec'>About</Button>
+                    <Button variant='outline-sec' onClick={() => setAboutModalIsOpen(true)}>About</Button>
                 </Stack>
             </Col>
         </Row>
@@ -101,6 +103,8 @@ export function NoteList ({ availableTags, notes, onUpdateTag, onDeleteTag }: No
 
         {/* THE MODAL TO EDIT TAGS */}
         <EditTagsModal show={editTagsModalIsOpen} handleClose={() => setEditTagsModalIsOpen(false)} availableTags={availableTags} onUpdateTag={onUpdateTag} onDeleteTag={onDeleteTag} />
+
+        <AboutModal show={aboutModalIsOpen} handleClose={() => setAboutModalIsOpen(false)} />
         </>
     )
 }
