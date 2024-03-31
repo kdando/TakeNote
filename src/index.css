@@ -9,7 +9,7 @@
 
 @font-face {
   font-family: 'Archivo';
-  src: url('/src/assets/fonts/Archivo-VariableFont_wdth\,wght.ttf'), format('truetype');
+  src: url('/src/assets/fonts/Archivo-VariableFont_wdth,wght.ttf'), format('truetype');
 }
 
 *:not(h1) {
