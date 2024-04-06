@@ -14,6 +14,7 @@ Try the deployed version here: https://takenote-ts.netlify.app/
 ## Installation and Set-Up
 
 This project is written in TypeScript and primarily uses React and Bootstrap.
+Installation requires Node.js v20.11.1.
 
 To run the project locally, first clone the repo:
 
